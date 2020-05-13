@@ -1,4 +1,4 @@
-package com.unuse;
+package com.unuse.p501_o550;
 
 /**
  * 斐波那契数列
@@ -6,7 +6,7 @@ package com.unuse;
  * @author Unuse
  * @date 2020/3/6
  */
-public class FibonacciSeq {
+public class P509_FibonacciSeq {
 
 	/**
 	 * O(n)
