@@ -1,0 +1,40 @@
+package com.unuse.p1_p50;
+
+/**
+ * 桌上有 n 堆力扣币，每堆的数量保存在数组 coins 中。我们每次可以选择任意一堆，拿走其中的一枚或者两枚，求拿完所有力扣币的最少次数。
+ *
+ * 输入：[4,2,1]
+ * 输出：4
+ * 解释：第一堆力扣币最少需要拿 2 次，第二堆最少需要拿 1 次，第三堆最少需要拿 1 次，总共 4 次即可拿完。
+ */
+public class P6_MinCount {
+
+	/**
+	 * 结题思路：只要每一堆每次都拿2枚，如果最后剩下只有一枚也算一次
+	 */
+	public static int minCount(int[] coins) {
+		int count = 0;
+		for (int coin : coins) {
+			count += coin >> 1;
+			if (coin % 2 == 1) {
+				count++;
+			}
+		}
+		return count;
+	}
+
+	public static int minCount2(int[] coins) {
+		int count = 0;
+		for (int coin : coins) {
+			count += (coin+1) >> 1;
+		}
+		return count;
+	}
+
+	public static void main(String[] args) {
+		int[] coins = {4, 2, 1};
+		System.out.println(minCount(coins));
+	}
+
+
+}
